@@ -1,4 +1,5 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
+import { HttpErrorByCode } from '@nestjs/common/utils/http-error-by-code.util';
 
 @Injectable()
 export class AppService {
@@ -6,7 +7,7 @@ export class AppService {
   users = {
     user1: {
       name: 'Tien Ngo',
-      ava: 'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F20%2F2018%2F04%2Fzappa-the-cat-9.jpg',
+      ava: 'https://instagram.fdad1-3.fna.fbcdn.net/v/t51.2885-15/e35/p240x240/249760561_862938154423168_4851623962953080369_n.jpg?_nc_ht=instagram.fdad1-3.fna.fbcdn.net&_nc_cat=104&_nc_ohc=5L4Kx3n1qNkAX-tXYs1&edm=AJXOVykBAAAA&ccb=7-4&oh=95893cabde8712e8c6dae5d5d1d950fc&oe=618714CD&_nc_sid=9c1db7&ig_cache_key=MjY5NTk2NzA1MTUxNTUyOTg3NA%3D%3D.2-ccb7-4',
       id: 'user1'
     },
     user2: {
@@ -41,13 +42,8 @@ export class AppService {
     } else if(userName === '123' && password === 'qwe') {
       return this.users.user2;
     } else {
-      return new HttpException(
-        {
-          status: HttpStatus.BAD_REQUEST,
-        }, HttpStatus.BAD_REQUEST
-      )
+      return new HttpErrorByCode[400]
     }
   }
-
   
 }

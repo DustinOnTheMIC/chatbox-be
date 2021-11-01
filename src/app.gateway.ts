@@ -1,5 +1,5 @@
 import { Logger } from "@nestjs/common";
-import { OnGatewayInit, SubscribeMessage, WebSocketGateway, WebSocketServer } from "@nestjs/websockets";
+import { ConnectedSocket, MessageBody, OnGatewayInit, SubscribeMessage, WebSocketGateway, WebSocketServer } from "@nestjs/websockets";
 import { Server, Socket } from "socket.io";
 
 @WebSocketGateway()
@@ -17,13 +17,13 @@ export class AppGateway implements OnGatewayInit {
     }
 
     afterInit(server: any) {
-        this.logger.log("Running");
+        this.logger.log(server);
     }
 
     @SubscribeMessage("joinRoom")
-    handleJoinRoom(clientSocket: Socket, roomId: string) {
-        clientSocket.join(roomId);
-        this.joiningRoom = roomId;
+    handleJoinRoom(@ConnectedSocket() clientSocket: Socket, @MessageBody() body) {
+        clientSocket.join(body.roomId);
+        this.joiningRoom = body.roomId;
     }
 
     @SubscribeMessage("sendNewMessage")

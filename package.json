@@ -7,6 +7,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "prebuild": "rimraf dist",
+    "dev": "nodemon app.ts",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
@@ -23,7 +24,9 @@
   "dependencies": {
     "@nestjs/common": "^8.0.0",
     "@nestjs/core": "^8.0.0",
-    "@nestjs/platform-express": "^8.0.0",
+    "@nestjs/platform-express": "^8.1.2",
+    "@nestjs/platform-socket.io": "^8.1.2",
+    "@nestjs/platform-ws": "^8.1.2",
     "@nestjs/websockets": "^8.1.2",
     "nodemon": "^2.0.14",
     "reflect-metadata": "^0.1.13",
