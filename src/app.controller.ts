@@ -22,7 +22,7 @@ export class AppController {
 
   @Post('login')
   handleLogin(@Body() body: any) {
-    const {userName, password} = JSON.parse(body.data)
+    const {userName, password} = body
     return this.appService.login(userName, password);
   }
 }

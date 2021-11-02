@@ -1,5 +1,6 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { HttpErrorByCode } from '@nestjs/common/utils/http-error-by-code.util';
+import { response } from 'express';
 
 @Injectable()
 export class AppService {
@@ -37,12 +38,14 @@ export class AppService {
   }
 
   login(userName, password) {
+    console.log(userName, password);
+    
     if(userName === "123" && password === "123") {
       return this.users.user1;
     } else if(userName === '123' && password === 'qwe') {
       return this.users.user2;
     } else {
-      return new HttpErrorByCode[400]
+      throw new HttpException("wrong", HttpStatus.BAD_REQUEST)
     }
   }
   
