@@ -26,6 +26,11 @@ export class AppGateway implements OnGatewayInit {
         this.joiningRoom = body.roomId;
     }
 
+    @SubscribeMessage('leaveRoom')
+    handleLeaveRoom(@ConnectedSocket() clientSocket: Socket, @MessageBody("roomId") room) {
+        clientSocket.leave(room)
+    }
+
     @SubscribeMessage("sendNewMessage")
     handleSendMessage(clientSocket: Socket, message: any) {
         this.socketServer.to(this.joiningRoom).emit("getNewMessage", {message})

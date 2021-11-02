@@ -7,7 +7,7 @@ export class AppService {
   users = {
     user1: {
       name: 'Tien Ngo',
-      ava: 'https://instagram.fdad1-3.fna.fbcdn.net/v/t51.2885-15/e35/p240x240/249760561_862938154423168_4851623962953080369_n.jpg?_nc_ht=instagram.fdad1-3.fna.fbcdn.net&_nc_cat=104&_nc_ohc=5L4Kx3n1qNkAX-tXYs1&edm=AJXOVykBAAAA&ccb=7-4&oh=95893cabde8712e8c6dae5d5d1d950fc&oe=618714CD&_nc_sid=9c1db7&ig_cache_key=MjY5NTk2NzA1MTUxNTUyOTg3NA%3D%3D.2-ccb7-4',
+      ava: 'https://instagram.fdad2-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/p640x640/118727321_180499580208452_7251250675079991400_n.jpg?_nc_ht=instagram.fdad2-1.fna.fbcdn.net&_nc_cat=108&_nc_ohc=XzU7cKIM8C4AX_rwtPo&tn=_WirIWuEYE4J-01I&edm=AABBvjUBAAAA&ccb=7-4&oh=48bfc4e5a105b4a32acc8c7336e90d33&oe=6187B1EF&_nc_sid=83d603',
       id: 'user1'
     },
     user2: {
