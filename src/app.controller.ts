@@ -15,14 +15,14 @@ export class AppController {
     return this.appService.getRoomList();
   }
 
-  // @Post('login')
-  // handleLogin(@Body('userName') userName: string, @Body('password') password: string) {
-  //   return this.appService.login(userName, password);
-  // }
-
   @Post('login')
-  handleLogin(@Body() body: any) {
-    const {userName, password} = JSON.parse(body.data)
+  handleLogin(@Body('userName') userName: string, @Body('password') password: string) {
     return this.appService.login(userName, password);
   }
+
+  // @Post('login')
+  // handleLogin(@Body() body: any) {
+  //   const {userName, password} = JSON.parse(body.data)
+  //   return this.appService.login(userName, password);
+  // }
 }
