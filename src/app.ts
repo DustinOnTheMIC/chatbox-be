@@ -1,6 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { WsAdapter } from '@nestjs/platform-ws';
 import { AppModule } from './app.module';
+import cors from 'cors'
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, {cors: true});
@@ -12,6 +13,7 @@ async function bootstrap() {
   app.useWebSocketAdapter(new WsAdapter(app)).enableCors({
     origin: "*"
   })
+  app.use(cors())
   await app.listen(3005);
 }
 bootstrap();

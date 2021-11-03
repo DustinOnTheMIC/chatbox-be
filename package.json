@@ -28,6 +28,7 @@
     "@nestjs/platform-socket.io": "^8.1.2",
     "@nestjs/platform-ws": "^8.1.2",
     "@nestjs/websockets": "^8.1.2",
+    "cors": "^2.8.5",
     "nodemon": "^2.0.14",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
