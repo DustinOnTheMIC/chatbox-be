@@ -15,6 +15,11 @@ export class AppController {
     return this.appService.getRoomList();
   }
 
+  @Post("test")
+  test(@Body() body) {
+    console.log(body);
+  }
+
   @Post('login')
   handleLogin(@Body('userName') userName: string, @Body('password') password: string) {
     return this.appService.login(userName, password);
